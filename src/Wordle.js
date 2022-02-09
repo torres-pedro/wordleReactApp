@@ -100,11 +100,7 @@ function ShowDef(props) {
   }, []);
   //res.data[0].meanings[0].definitions[0].definition
 
-  return (
-    <>
-      <p>{wordDef}</p>
-    </>
-  );
+  return <>{wordDef}</>;
 }
 
 function Game(props) {
@@ -202,6 +198,9 @@ function Game(props) {
       {boxArray}
       {wordleResult === "correct" ? (
         <div style={{ textAlign: "center" }}>
+          <b>
+            {currentWord.split("")[0] + currentWord.slice(1).toLowerCase()}:{" "}
+          </b>
           <ShowDef currentWord={currentWord} />{" "}
         </div>
       ) : (
